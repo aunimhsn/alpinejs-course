@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Course</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Alpine JS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="p-16">
+    <div x-data="{ message: 'Hello World!' }" class="p-4">
+        <h1 x-text="message" class="text-3xl mb-2"></h1>
+   
+        <button type="button" @click="message = 'Changed!'" class="focus:outline-none bg-blue-200 p-2 hover:bg-blue-400">Click Me!</button>
+    </div>
+
+    <div x-data="{ game: 'Chess' }" class="p-4">
+        <h1 x-text="game" class="text-3xl mb-2"></h1>
+        <input type="text" x-model="game" class="bg-gray-200 focus:outline-none p-2" />
+    </div>
+
+    <div x-data="{ isOpen: false }" class="p-4">
+        <button type="button" @click="isOpen = !isOpen" class="focus:outline-none bg-blue-200 p-2 hover:bg-blue-400">Click Me!</button>
+        <h1 x-show="isOpen" class="text-3xl mt-2">Hey!</h1>
+    </div>
+</body>
+</html>
